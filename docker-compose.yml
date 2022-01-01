@@ -1,0 +1,20 @@
+version: '3.2'
+
+services:
+  bash: &shared-base
+    image: avro2py:latest
+    volumes: &shared-volumes
+      - type: bind
+        source: .
+        target: /code
+        read_only: true
+    working_dir: /code
+    build: .
+    entrypoint: []
+    command: "bash"
+  dash:
+    <<: *shared-base
+    entrypoint: streamlit run main.py
+    command: []
+    ports:
+      - "8501:8501"
