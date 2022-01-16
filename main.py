@@ -29,8 +29,8 @@ add_new = new.button('+')
 if add_new:
     with st.form(key='new'):
         added = st.container()
-        x = st.slider("Prob:", 0.0, 1.0)
-        st.form_submit_button("Done", on_click=pipeline.append, args=(float(x),))
+        x = st.slider("Prob:", 0.0, 1.0, key='x')
+        st.form_submit_button("Done", on_click=lambda: st.session_state.pipeline.append(float(st.session_state.x)),)
             #pipeline.append(float(x))
             #display(x)
 

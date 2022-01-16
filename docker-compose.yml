@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   bash: &shared-base
-    image: avro2py:latest
+    image: distlit:latest
     volumes: &shared-volumes
       - type: bind
         source: .
