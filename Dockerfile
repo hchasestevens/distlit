@@ -1,6 +1,6 @@
 FROM python:3.9
 
-RUN pip install streamlit tensorflow tensorflow-probability
+RUN pip install streamlit tensorflow tensorflow-probability seaborn
 
 ADD . /code
 WORKDIR /code
